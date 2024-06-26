@@ -1,0 +1,77 @@
+* {
+    box-sizing : border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.app_header {
+    text-decoration: underline solid rgba(0, 0, 255, 1);
+    color: rgba(0, 0, 255, 1);
+    padding-left: 30%;
+    font-family: Apple Chancery;
+    font-size: 3rem;
+}
+#strike {
+    text-decoration: 1.2px double crimson line-through;
+}
+
+
+.grid {
+    margin-left: 2.5%;
+    margin-top: 2.5%;
+    border-radius: 12px;
+}
+.container {
+    border: 3px outset rgba(0, 0, 255, 0.80);
+    background-color: rgba(0, 0, 255, 0.4);
+    border-radius: 12px;
+    width: 950px;
+    height: 450px;
+}
+.inner-container {
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.input-user {
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+.input-topic {
+    font-size: 1rem;
+    padding:0.5rem;
+}
+.textarea {
+    font-size: 1rem;
+    width: 800px;
+    height: 200px;
+    border: 5px double rgba(0, 0, 255, 0.80);
+    color: crimson;
+    display: inline-block;
+    padding-left: 0.5rem;
+}
+.btn {
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 3px outset #fff solid;
+    background-color: rgba(220, 220, 220, 0.75);
+    color: #000;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.label {
+    font-family: monospace;
+    opacity: 0.6;
+}
+.ahref {
+    border: 2px inset rgba(0, 0, 0, 1);
+    border-radius: 8px;
+    padding: 0.5rem;
+    background-color: #FFF;
+    color: rgba(255, 0, 0, 1);
+    cursor: pointer;
+    text-align: center;
+    font-family: monospace;
+    font-size: 1rem;
+}

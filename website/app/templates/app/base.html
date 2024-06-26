@@ -1,0 +1,60 @@
+{% load static %}
+
+<!doctype html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/app.css' %}">
+
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+
+      <nav class="navbar navbar-expand-lg" style="background-color: rgba(0, 50, 0, 1);">
+        <div class="container-fluid" style="gap: 4rem;">
+          <a class="navbar-brand text" style="text-decoration: 1px underline solid #fff; color: rgba(255, 255, 255, 1); font-family: Apple Chancery; font-size: 1.9rem;" href="#">El Diario Mio!</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text text-primary" style="font-family: Apple Chancery; font-size: 1.2rem;" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" style="color: rgba(0, 180, 255, 1); font-family: Apple Chancery; font-size: 1.2rem;" aria-current="page" href="#">Diario</a>
+              </li>
+              <li>
+                <a class="nav-link active text text-warning" style="font-family: Apple Chancery; font-size: 1.2rem;" aria-current="page" href="#">Edit</a>
+              </li>
+              <li>
+                <a class="nav-link active" style="color: rgba(255, 60, 100, 1); font-family: Apple Chancery; font-size: 1.2rem; text-decoration: 1.5px  solid #fff line-through;" aria-current="page" href="#">Delete?</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control" type="search" placeholder="enter your journal entry here..." style="width: 600px; margin-right: 60px;" aria-label="Search">
+              <button class="" style="font-family: Apple Chancery; font-size: 0.90rem; color: #fff; border: 3px solid #fff; border-radius: 12px; cursor: pointer; background-color: rgba(0, 60, 0, 1); width: 200px;" type="submit">Entviar Du Diario Aque!</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+        <div>
+            {% block content %}
+            {% endblock content %}
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="../../static/JS/diario.js"/></script>
+    </body>
+</html>
+
+
+
+
+

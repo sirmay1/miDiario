@@ -1,0 +1,59 @@
+{% extends 'app/base.html' %}
+
+
+<title>{% block title %}El Diario De Mi Objectivos!{% endblock title %}</title>
+
+
+{% block content %}
+
+
+<body>
+    <div class="grid">
+    {% if all_items %}
+        <form class="container">
+        {% for things in all_items %}
+            {% if things.completed %}
+                <div class="inner-container">
+                    <input type="text" placeholder="Username..." id="striker" class="input-user">
+                        <a href="{% url 'edit' things.id %}" class="ahref">{{ things.id }}</a>
+                    </input>
+                        <br />
+                    <input type="text" placeholder="Topic Title..." id="topic" class="input-topic">
+                        <a href="{% url 'uncross' things.id %}" class="ahref">uncross</a>
+                    </input>
+                        <br />
+                    <input type="text" class="textarea" id="box" placeholder="submit journal...">
+                         <a href="{% url 'delete' things.id %}" class="ahref">Delete</a>
+                    </input>
+                </div>
+            {% else %}
+                <div>
+                    <input type="text" placeholder="Username..." id="user" class="input-user">
+                        <a href="{% url 'edit' things.id %}" class="ahref">{{ things.id }}</a>
+                    </input>
+                        <br />
+                    <input type="text" placeholder="Topic Title..." id="topic" class="input-topic">
+                        <a href="{% url 'cross_off'  things.id %}" class="ahref">Cross Off</a>
+                    </input>
+                        <br />
+                    <input type="text" class="textarea" id="box" placeholder="submit journal...">
+                        <a href="{% url 'delete' things.id %}" class="ahref">Delete</a>
+                    </input>
+                </div>
+                    <br />
+                <button type="submit" class="btn" id="button">Submit</button>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </form>
+    {% endif %}
+    </div>
+</body>
+
+
+{% endblock content %}
+
+
+
+
+
