@@ -1,34 +1,44 @@
 {% extends 'app/base.html' %}
 
+{% block title %}
+Diario Add To Journal List
+{% endblock title %}
+
+
 {% block content %}
-<div>
-    {% if all_items %}
-    <table class="table table-striped table-hover table-bordered">
-        <thead class="table-dark">
-            {% for things in all_items %}
-                {% if things.completed %}
-                <tr class="table-secondary">
-                    <td class="striker"><a href="{% url 'edit' things.id %}">{{ things.item }}</a></td>
-                    <td><a href="{% url 'time_stamp' things.id %}">{{ things.item }}</a></td>
-                    <td><a href="{% url 'uncross' things.id %}">uncross</a></td>
-                    <td><a href="{% url 'delete' things.id %}">Delete</a></td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td><a href="{% url 'edit' things.id %}">{{ things.item }}</a></td>
-                    <td><a href="{% url 'time_stamp' things.id %}">{{ things.item }}</a></td>
-                    <td><a href="{% url 'cross_off' things.id %}">{{ things.item }}</a></td>
-                    <td><a href="{% url 'delete' things.id %}">{{ things.item }}</a></td>
-                </tr>
-                {% endif %}
-            {% endfor %}
-        </thead>
-    </table>
+
+{% if messages %}
+
+    {% for message in messages %}
+        <div class="alert alert-info alert-dismissable" role="alert">
+            <button class="close" data-dismiss="alert">
+                <small><sup>X</sup></small>
+            </button>
+                {{ message }}
+        </div>
+        {% endfor %}
+{% endif %}
+
+
+{% if all_items %}
+
+<table class="table table-bordered">
+
+    {% for things in all_items %}
+        {% if things.completed %}
+        <tr class="table-secondary">
+            <td class="striker"><a href="{% url 'edit' things.id %}">{{ things.item }}</a></td>
+            <td><center><a href="{% url 'uncross' things.id %}">uncross</a></center></td>
+            <td><center><a href="{% url 'delete' things.id %}">delete</a></center></td>
+        </tr>
+    {% else %}
+        <tr>
+            <td><a href="{% url 'edit' things.id %}">{{ things.item }}</a></td>
+            <td><center><a href="{% url '' things.id %}">cross off</a></center></td>
+            <td><center><a href="{% url '' things.id %}">delete</a></center></td>
+        </tr>
     {% endif %}
-</div>
-
+{% endfor %}
+</table>
+{% endif %}
 {% endblock content %}
-
-
-
-

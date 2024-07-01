@@ -3,3 +3,13 @@
     padding: 0;
     margin: 0;
 }
+
+.li_header {
+    color: #fff;
+    text-align: center;
+    text-decoration: underline #fff 3px solid;
+    font-family: Apple Chancery;
+    font-weight: 900;
+    background-color: purple;
+    border-bottom: 3px solid lime;
+}
